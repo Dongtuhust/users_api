@@ -1,0 +1,18 @@
+version: '3'
+  
+services:
+  mysql:
+    image: user-mysql:v1
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: user_db
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - "3308:3306"
+  user-api:
+    image: user-api:v1
+    depends_on:
+      - mysql
+    ports:
+- "8083:80"
