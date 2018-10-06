@@ -59,7 +59,7 @@ if($num>0){
  
     // include paging
     $total_rows=$user->count();
-    $page_url="{$home_url}user/readPaging.php?";
+    $page_url="{$home_url}users/readPaging.php?";
     $paging=$utilities->getPaging($page, $total_rows, $records_per_page, $page_url);
     $users_arr["paging"]=$paging;
  

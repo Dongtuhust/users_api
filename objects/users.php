@@ -218,7 +218,7 @@ class User{
         // select query
         $query = "SELECT
                    *
-                FROM  $this->table_name ";
+                FROM  $this->table_name LIMIT ?, ?";
      
         // prepare query statement
         $stmt = $this->conn->prepare( $query );
